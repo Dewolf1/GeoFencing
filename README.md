@@ -1,31 +1,31 @@
-🗺️ Geo-Fencing Safety App
-A simple, self-contained web application for simulating real-time tourist tracking and geo-fencing in a single HTML file.
+# 🗺️ Geo-Fencing Safety App  
 
-🚀 Project Status: Live Demo
-🎯 Features
-Live Tourist Tracking: See multiple tourist locations updated in real-time on a map.
+A simple, self-contained web application for simulating real-time tourist tracking and geo-fencing in a single HTML file.  
 
-Danger Zone Alerts: Receive instant alerts when a tourist enters a pre-defined high-risk area.
+---
 
-Simulated AI Guidance: Get automated advice for navigating tourist safety situations.
+## 🚀 Project Status  
+✅ **Live Demo Ready**  
 
-Interactive Map: Create and edit custom geo-fencing zones (polygons and circles).
+---
 
-Location History: Track the movement of a specific tourist with a visual path trace.
+## 🎯 Features  
 
-💻 How to Run
-This project is a single, portable HTML file. You can run it locally or deploy it easily to a static hosting service.
+- **Live Tourist Tracking**: See multiple tourist locations updated in real-time on a map.  
+- **Danger Zone Alerts**: Receive instant alerts when a tourist enters a pre-defined high-risk area.  
+- **Simulated AI Guidance**: Get automated advice for navigating tourist safety situations.  
+- **Interactive Map**: Create and edit custom geo-fencing zones (polygons and circles).  
+- **Location History**: Track the movement of a specific tourist with a visual path trace.  
 
-Local Setup
-To get started, you only need to download the file.
+---
 
-Clone the repository:
+## 💻 How to Run  
 
-git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+This project is a **single, portable HTML file**. You can run it locally or deploy it easily to any static hosting service (like GitHub Pages, Netlify, or Vercel).  
 
-Navigate to the project folder:
+### 🔹 Local Setup  
 
-cd your-repo-name
+Clone the repository:  
 
-Open the file:
-Simply open the index.html file in your favorite web browser (like Chrome, Firefox, or Edge).
+```bash
+git clone https://github.com/your-username/your-repo-name.git
