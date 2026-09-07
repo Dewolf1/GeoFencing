@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Website Proposal — jenw.in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF9F6;
+    --paper-dim:#F1EFE9;
+    --ink:#18181B;
+    --ink-soft:#5B5B62;
+    --ink-faint:#8A8A90;
+    --line:#E2DFD6;
+    --accent:#E0233F;
+    --accent-dark:#9C0F26;
+    --accent-soft:#FBE6E9;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Sora', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  a{color:inherit;}
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    margin:0;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  .wrap{
+    max-width:740px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    padding:48px 0 22px;
+    border-bottom:1px solid var(--line);
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .logomark{position:relative; width:30px; height:30px; flex:none;}
+  .logomark::before,
+  .logomark::after{content:''; position:absolute; top:0;}
+  .logomark::before{
+    width:100%; height:100%;
+    background:var(--accent);
+    clip-path:polygon(46% 0%, 100% 100%, 12% 100%);
+  }
+  .logomark::after{
+    width:56%; height:100%; left:-6%;
+    background:var(--accent-dark);
+    clip-path:polygon(0% 34%, 42% 100%, 0% 100%);
+  }
+  .brand-name{
+    font-family:'Sora', sans-serif;
+    font-weight:800;
+    font-size:19px;
+    letter-spacing:-0.01em;
+  }
+  .brand-name span{color:var(--accent);}
+
+  .meta{
+    text-align:right;
+    font-size:13px;
+    color:var(--ink-faint);
+    line-height:1.6;
+  }
+  .meta strong{color:var(--ink-soft); font-weight:600;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:52px 0 40px;}
+  .hero .kicker{
+    font-size:14px;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(30px, 5vw, 44px);
+    font-weight:600;
+    line-height:1.14;
+    max-width:15ch;
+  }
+  .hero p{
+    margin-top:18px;
+    max-width:52ch;
+    font-size:17px;
+    color:var(--ink-soft);
+  }
+
+  hr.rule{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:0;
+  }
+
+  section{padding:44px 0;}
+  section.tight{padding:36px 0;}
+
+  h2.section-title{
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .section-intro{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:56ch;
+    margin-bottom:28px;
+  }
+
+  /* ---------- Feature list ---------- */
+  .feature-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+  }
+  .feature{
+    padding:22px 22px 22px 0;
+    border-top:1px solid var(--line);
+  }
+  .feature:nth-child(odd){padding-right:26px;}
+  .feature:nth-child(even){padding-left:26px; border-left:1px solid var(--line);}
+  .feature:nth-child(1),.feature:nth-child(2){border-top:none;}
+  .feature .mark{
+    width:9px; height:9px;
+    background:var(--accent);
+    border-radius:1px;
+    transform:rotate(45deg);
+    margin-bottom:14px;
+  }
+  .feature h3{
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:8px;
+    font-family:'Sora', sans-serif;
+  }
+  .feature p{
+    margin:0;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:560px){
+    .feature-list{grid-template-columns:1fr;}
+    .feature:nth-child(odd){padding-right:0;}
+    .feature:nth-child(even){padding-left:0; border-left:none; border-top:1px solid var(--line);}
+    .feature:nth-child(2){border-top:none;}
+  }
+
+  /* ---------- Work sample ---------- */
+  .work-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    padding:26px 28px;
+    border-radius:4px;
+    flex-wrap:wrap;
+  }
+  .work-box h3{
+    font-size:17px;
+    font-weight:600;
+    font-family:'Sora', sans-serif;
+    margin-bottom:6px;
+  }
+  .work-box p{margin:0; color:var(--ink-soft); font-size:14.5px;}
+  .btn-outline{
+    display:inline-block;
+    white-space:nowrap;
+    padding:12px 22px;
+    border:1.5px solid var(--ink);
+    color:var(--ink);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    border-radius:3px;
+    transition:background .15s ease, color .15s ease;
+  }
+  .btn-outline:hover{background:var(--ink); color:var(--paper);}
+
+  /* ---------- Included list ---------- */
+  .included{
+    list-style:none;
+    margin:0; padding:0;
+    display:grid;
+    gap:14px;
+  }
+  .included li{
+    display:flex;
+    gap:14px;
+    align-items:baseline;
+    font-size:15.5px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .included li:last-child{border-bottom:none; padding-bottom:0;}
+  .included b{font-weight:600;}
+  .included .tag{
+    flex:none;
+    font-size:11.5px;
+    color:var(--accent-dark);
+    background:var(--accent-soft);
+    padding:3px 8px;
+    border-radius:20px;
+    font-weight:600;
+    transform:translateY(2px);
+  }
+
+  /* ---------- Pricing ---------- */
+  .price-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:15px;
+    margin-top:8px;
+  }
+  .price-table thead th{
+    text-align:left;
+    font-family:'Sora', sans-serif;
+    font-weight:600;
+    font-size:13px;
+    color:var(--paper);
+    background:var(--ink);
+    padding:14px 16px;
+  }
+  .price-table thead th:last-child{text-align:right;}
+  .price-table tbody td{
+    padding:16px;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-soft);
+  }
+  .price-table tbody td:first-child{color:var(--ink); font-weight:600;}
+  .price-table tbody td:last-child{
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+    color:var(--ink);
+  }
+  .price-table tfoot td{
+    padding:18px 16px;
+    font-weight:700;
+    font-size:17px;
+    background:var(--accent-soft);
+    color:var(--accent-dark);
+  }
+  .price-table tfoot td:last-child{text-align:right; font-variant-numeric:tabular-nums;}
+  .price-note{
+    margin-top:16px;
+    font-size:13.5px;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- Timeline / maintenance strip ---------- */
+  .strip{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .strip > div{padding:24px 26px;}
+  .strip > div:first-child{border-right:1px solid var(--line);}
+  .strip .label{
+    font-size:12.5px;
+    color:var(--ink-faint);
+    margin-bottom:6px;
+  }
+  .strip .value{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    font-weight:600;
+  }
+  .strip p{margin:8px 0 0; font-size:13.5px; color:var(--ink-soft);}
+
+  @media (max-width:560px){
+    .strip{grid-template-columns:1fr;}
+    .strip > div:first-child{border-right:none; border-bottom:1px solid var(--line);}
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:var(--ink);
+    color:var(--paper);
+    padding:56px 0;
+    margin-top:8px;
+  }
+  .cta h2{
+    color:var(--paper);
+    font-size:28px;
+    font-weight:600;
+    max-width:18ch;
+  }
+  .cta p{
+    color:#B9B9BE;
+    margin-top:12px;
+    max-width:46ch;
+    font-size:15.5px;
+  }
+  .cta-row{
+    margin-top:28px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .btn-primary{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:3px;
+    font-weight:700;
+    font-size:15px;
+    transition:background .15s ease;
+  }
+  .btn-primary:hover{background:var(--accent-dark);}
+  .cta-numbers{
+    font-size:14.5px;
+    color:#D8D8DC;
+  }
+  .cta-numbers a{text-decoration:none; color:#fff; font-weight:600;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:26px 0 40px;
+    text-align:center;
+    font-size:12.5px;
+    color:var(--ink-faint);
+  }
+  footer .brand-name{font-size:13px;}
+
+  /* ---------- Chat widget ---------- */
+  .chat-toggle{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:var(--accent);
+    border:none;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(224,35,63,0.35);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:60;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .chat-toggle:hover{background:var(--accent-dark); transform:translateY(-2px);}
+  .chat-toggle svg{width:24px; height:24px;}
+
+  .chat-panel{
+    position:fixed;
+    right:22px;
+    bottom:90px;
+    width:320px;
+    max-width:calc(100vw - 40px);
+    height:420px;
+    max-height:calc(100vh - 140px);
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    box-shadow:0 18px 44px rgba(0,0,0,0.18);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    z-index:60;
+    opacity:0;
+    transform:translateY(10px) scale(0.98);
+    pointer-events:none;
+    transition:opacity .16s ease, transform .16s ease;
+  }
+  .chat-panel.open{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    pointer-events:auto;
+  }
+  .chat-head{
+    background:var(--ink);
+    color:var(--paper);
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex:none;
+  }
+  .chat-head .who{display:flex; align-items:center; gap:10px;}
+  .chat-head .who .dot{width:8px;height:8px;border-radius:50%;background:#3FCB6E;}
+  .chat-head .name{font-family:'Sora',sans-serif; font-weight:700; font-size:14px;}
+  .chat-head .sub{font-size:11px; color:#B9B9BE;}
+  .chat-close{
+    background:none; border:none; color:#D8D8DC;
+    cursor:pointer; font-size:18px; line-height:1; padding:4px;
+  }
+  .chat-close:hover{color:#fff;}
+
+  .chat-body{
+    flex:1;
+    overflow-y:auto;
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    background:var(--paper);
+  }
+  .msg{
+    max-width:84%;
+    font-size:13.5px;
+    line-height:1.5;
+    padding:9px 12px;
+    border-radius:10px;
+  }
+  .msg.bot{
+    align-self:flex-start;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    color:var(--ink);
+    border-bottom-left-radius:3px;
+  }
+  .msg.user{
+    align-self:flex-end;
+    background:var(--accent);
+    color:#fff;
+    border-bottom-right-radius:3px;
+  }
+
+  .chat-quick{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    padding:0 16px 12px;
+    flex:none;
+  }
+  .chat-quick button{
+    font-size:11.5px;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:6px 10px;
+    border-radius:20px;
+    cursor:pointer;
+    font-family:'Sora',sans-serif;
+  }
+  .chat-quick button:hover{border-color:var(--accent); color:var(--accent-dark);}
+
+  .chat-form{
+    display:flex;
+    gap:8px;
+    padding:12px;
+    border-top:1px solid var(--line);
+    flex:none;
+    background:var(--paper);
+  }
+  .chat-form input{
+    flex:1;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:9px 14px;
+    font-family:'Sora',sans-serif;
+    font-size:16px;
+    outline:none;
+    background:#fff;
+    color:var(--ink);
+  }
+  .chat-form input:focus{border-color:var(--accent);}
+  .chat-form button{
+    flex:none;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:none;
+    background:var(--ink);
+    color:#fff;
+    cursor:pointer;
+    font-size:14px;
+  }
+  .chat-form button:hover{background:var(--accent);}
+
+  /* ---------- Mobile optimisation ---------- */
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+
+    .masthead{
+      padding:28px 0 18px;
+      align-items:flex-start;
+      gap:14px;
+    }
+    .meta{text-align:left;}
+
+    .hero{padding:32px 0 28px;}
+    .hero .kicker{margin-bottom:10px;}
+    .hero h1{max-width:100%;}
+    .hero p{font-size:15.5px;}
+
+    section{padding:32px 0;}
+    section.tight{padding:24px 0;}
+    h2.section-title{font-size:21px;}
+    .section-intro{font-size:14.5px; margin-bottom:20px;}
+
+    .work-box{padding:20px;}
+    .work-box .btn-outline{width:100%; text-align:center;}
+
+    .price-table{font-size:13.5px;}
+    .price-table thead th,
+    .price-table tbody td,
+    .price-table tfoot td{padding:12px 10px;}
+    .price-table tfoot td{font-size:15.5px;}
+
+    .strip > div{padding:20px;}
+
+    .cta{padding:40px 0;}
+    .cta h2{font-size:23px; max-width:100%;}
+    .cta-row{flex-direction:column; align-items:stretch; gap:16px;}
+    .btn-primary{text-align:center;}
+    .cta-numbers{text-align:center;}
+
+    footer{padding:22px 0 100px;}
+  }
+
+  @media (max-width:420px){
+    .brand-name{font-size:17px;}
+    .hero p{font-size:15px;}
+    .included li{font-size:14.5px;}
+  }
+
+  /* Chat as a full-width bottom sheet on small phones */
+  @media (max-width:480px){
+    .chat-toggle{
+      right:16px;
+      bottom:calc(16px + env(safe-area-inset-bottom, 0px));
+    }
+    .chat-panel{
+      right:0;
+      left:0;
+      bottom:0;
+      width:100%;
+      max-width:100%;
+      height:82vh;
+      max-height:82vh;
+      border-radius:14px 14px 0 0;
+      border-left:none;
+      border-right:none;
+      border-bottom:none;
+      padding-bottom:env(safe-area-inset-bottom, 0px);
+    }
+    .chat-panel.open{transform:translateY(0);}
+    .chat-panel:not(.open){transform:translateY(16px);}
+    .chat-form{padding-bottom:calc(12px + env(safe-area-inset-bottom, 0px));}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="brand">
+      <div class="logomark" aria-hidden="true"></div>
+      <div class="brand-name">jenw<span>.in</span></div>
+    </div>
+    <div class="meta">
+      <strong>Website Proposal</strong><br>
+      Kitchen Equipment Shop — Website &amp; Ordering<br>
+      Valid until 30 September 2026
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="kicker">Proposal</div>
+    <h1>A website that shows every product and gets your phone buzzing with orders.</h1>
+    <p>A clean, mobile-friendly site for your kitchen equipment shop — customers browse, inquire and order in one tap, straight to your WhatsApp. Built and handed over ready to use, no ongoing dashboard to manage.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2 class="section-title">What your customers get</h2>
+    <p class="section-intro">Every part of the site is built around one thing — making it effortless for a customer to see what you sell and reach you about it.</p>
+
+    <div class="feature-list">
+      <div class="feature">
+        <div class="mark"></div>
+        <h3>See all products</h3>
+        <p>Every item listed with a photo, name and price on a clean, mobile-friendly page.</p>
+      </div>
+      <div class="feature">
+        <div class="mark"></div>
+        <h3>Inquiry on WhatsApp</h3>
+        <p>One tap sends the product details straight to your WhatsApp — no forms, no waiting.</p>
+      </div>
+      <div class="feature">
+        <div class="mark"></div>
+        <h3>Order a single item</h3>
+        <p>Customers fill a simple order form for any one item — no payment gateway, the order comes straight to you.</p>
+      </div>
+      <div class="feature">
+        <div class="mark"></div>
+        <h3>Ready kitchen packages</h3>
+        <p>Full kitchen setups shown as one package, so a customer can inquire for everything at once.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="tight">
+    <div class="work-box">
+      <div>
+        <h3>See our recent work</h3>
+        <p>A look at sites we've built for other shops and brands.</p>
+      </div>
+      <a class="btn-outline" href="https://www.jenw.in/work" target="_blank" rel="noopener">View our work</a>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2 class="section-title">What you get in short</h2>
+    <ul class="included">
+      <li><span class="tag">Website</span> <span><b>Product listing website</b> — clean, fast and built to work well on mobile phones.</span></li>
+      <li><span class="tag">WhatsApp</span> <span><b>Direct inquiries</b> — every product and order lands straight in your WhatsApp.</span></li>
+      <li><span class="tag">Packages</span> <span><b>Kitchen packages</b> — bundle products together for easy full-kitchen orders.</span></li>
+      <li><span class="tag">Product updates</span> <span><b>We add and edit products for you</b> — send us new items or changes, and we update the site.</span></li>
+      <li><span class="tag">Built for you</span> <span><b>Custom coded website</b> — built from scratch for your shop, not on WordPress or a template builder.</span></li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2 class="section-title">Pricing</h2>
+    <p class="section-intro">One-time setup, billed together. Nothing hidden, nothing recurring to track.</p>
+
+    <table class="price-table">
+      <thead>
+        <tr><th>Item</th><th>Cost (₹)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Domain name (.in) — 1 year</td><td>600</td></tr>
+        <tr><td>Website development &amp; hosting</td><td>9,400</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total</td><td>10,000</td></tr>
+      </tfoot>
+    </table>
+    <p class="price-note">Includes your domain, hosting and a complete custom-coded website with WhatsApp-based ordering. This quotation is valid until 30 September 2026.</p>
+  </section>
+
+  <section class="tight">
+    <div class="strip">
+      <div>
+        <div class="label">Delivery time</div>
+        <div class="value">1 week</div>
+        <p>Your website will be built and live within one week of getting started.</p>
+      </div>
+      <div>
+        <div class="label">Maintenance</div>
+        <div class="value">Free of cost</div>
+        <p>Minor changes and small updates are done free — no extra charge.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>Ready to get started?</h2>
+    <p>Message us on WhatsApp and we'll begin right away. Your website goes live in one week.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://wa.me/919560835836" target="_blank" rel="noopener">Message on WhatsApp</a>
+      <div class="cta-numbers">
+        Or call: <a href="tel:+919560835836">95608 35836</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="brand-name">jenw.in</div>
+  Website Proposal &amp; Quotation — jenw.in
+</footer>
+
+
+<!-- Chat widget: static keyword-matched FAQ bot, no backend, no external calls -->
+<button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 5h16v10H8l-4 4V5z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div class="who">
+      <span class="dot"></span>
+      <div>
+        <div class="name">jenw.in assistant</div>
+        <div class="sub">Answers about this proposal</div>
+      </div>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-quick" id="chatQuick">
+    <button data-q="What's the total price?">Total price</button>
+    <button data-q="How does delivery work?">Delivery time</button>
+    <button data-q="How do customers order?">How ordering works</button>
+    <button data-q="Is this WordPress?">Custom coded?</button>
+  </div>
+  <form class="chat-form" id="chatForm">
+    <input type="text" id="chatInput" placeholder="Ask a question…" autocomplete="off">
+    <button type="submit" aria-label="Send">➤</button>
+  </form>
+</div>
+
+<script>
+(function(){
+  // All answers are hardcoded below — this bot does no processing,
+  // sends no data anywhere, and calls no server. Pure keyword lookup.
+  var FAQ = [
+    { k:['total','price','cost','how much','quotation','budget'],
+      a:'The total is ₹10,000 — ₹600 for the .in domain (1 year) and ₹9,400 for website development and hosting.' },
+    { k:['domain'],
+      a:'A .in domain for 1 year is included, costing ₹600 of the total.' },
+    { k:['hosting'],
+      a:'Hosting is bundled together with development at ₹9,400 — it keeps your site live year-round.' },
+    { k:['delivery','how long','time','week','ready'],
+      a:'Your website will be built and live within 1 week of getting started.' },
+    { k:['maintenance','update','change','edit product','add product'],
+      a:'We add and edit products for you — just send the details and we update the site. Minor changes are free of cost.' },
+    { k:['wordpress','template','custom cod','built','tech','built with'],
+      a:'It\'s a custom coded website, built from scratch for your shop — not WordPress or a template builder.' },
+    { k:['order','buy','purchase','checkout'],
+      a:'Customers order a single item by filling a simple form on the site — there\'s no payment gateway, the order comes straight to you.' },
+    { k:['payment','gateway','pay online','upi'],
+      a:'There\'s no payment gateway in this plan — orders come to you as inquiries and you settle payment directly with the customer.' },
+    { k:['whatsapp','inquiry','inquire','message'],
+      a:'One tap on any product sends its details straight to your WhatsApp — no forms, no waiting, for inquiries.' },
+    { k:['package','bundle','kitchen set','combo'],
+      a:'Full kitchen setups can be shown as ready packages, so a customer can inquire about a whole kitchen in one go.' },
+    { k:['sample','work','portfolio','example','see your work'],
+      a:'You can see past projects at jenw.in/work.' },
+    { k:['admin','dashboard','panel','login','manage myself'],
+      a:'There\'s no admin panel in this plan — it\'s a custom coded site, and we handle adding or editing products for you as part of free maintenance.' },
+    { k:['valid','expire','expiry','deadline'],
+      a:'This quotation is valid until 30 September 2026.' },
+    { k:['contact','phone','number','call','reach'],
+      a:'You can reach jenw.in on WhatsApp or call +91 95608 35836.' },
+    { k:['hi','hello','hey'],
+      a:'Hi! I can answer questions about this proposal — pricing, delivery, ordering, or anything else on this page.' }
+  ];
+
+  var FALLBACK = "I don't have an answer for that here — message us directly on WhatsApp at +91 95608 35836 and we'll help.";
+
+  var toggle = document.getElementById('chatToggle');
+  var panel = document.getElementById('chatPanel');
+  var closeBtn = document.getElementById('chatClose');
+  var body = document.getElementById('chatBody');
+  var form = document.getElementById('chatForm');
+  var input = document.getElementById('chatInput');
+  var quick = document.getElementById('chatQuick');
+  var greeted = false;
+
+  function addMsg(text, who){
+    var el = document.createElement('div');
+    el.className = 'msg ' + who;
+    el.textContent = text;
+    body.appendChild(el);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function answer(text){
+    var q = text.toLowerCase();
+    for (var i=0; i<FAQ.length; i++){
+      for (var j=0; j<FAQ[i].k.length; j++){
+        if (q.indexOf(FAQ[i].k[j]) !== -1) return FAQ[i].a;
+      }
+    }
+    return FALLBACK;
+  }
+
+  function openChat(){
+    panel.classList.add('open');
+    if (!greeted){
+      addMsg("Hi, I'm the jenw.in assistant. Ask me about pricing, delivery, ordering or anything else in this proposal.", 'bot');
+      greeted = true;
+    }
+    input.focus();
+  }
+
+  toggle.addEventListener('click', function(){
+    panel.classList.contains('open') ? panel.classList.remove('open') : openChat();
+  });
+  closeBtn.addEventListener('click', function(){ panel.classList.remove('open'); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    setTimeout(function(){ addMsg(answer(val), 'bot'); }, 250);
+  });
+
+  quick.addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-q]');
+    if (!btn) return;
+    var q = btn.getAttribute('data-q');
+    addMsg(q, 'user');
+    setTimeout(function(){ addMsg(answer(q), 'bot'); }, 250);
+  });
+})();
+</script>
+
+</body>
+</html>
