@@ -375,6 +375,75 @@
   }
   .chat-toggle:hover{background:var(--accent-dark); transform:translateY(-2px);}
   .chat-toggle svg{width:24px; height:24px;}
+  .chat-toggle::after{
+    content:'';
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    border:2px solid var(--accent);
+    opacity:0;
+    pointer-events:none;
+    animation:pulseRing 1.6s ease-out 1s 3;
+  }
+  @keyframes pulseRing{
+    0%{ transform:scale(0.85); opacity:.55; }
+    100%{ transform:scale(1.7); opacity:0; }
+  }
+
+  /* ---------- Chatbot callout (in-quotation preview) ---------- */
+  .bot-callout{
+    display:flex;
+    align-items:center;
+    gap:26px;
+    background:var(--accent-soft);
+    border:1.5px dashed var(--accent);
+    border-radius:8px;
+    padding:26px 28px;
+  }
+  .bot-callout-text{flex:1;}
+  .bot-tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    color:var(--accent-dark);
+    background:#fff;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .bot-callout h3{
+    font-size:18px;
+    font-weight:600;
+    font-family:'Sora', sans-serif;
+    margin-bottom:8px;
+  }
+  .bot-callout p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    max-width:48ch;
+  }
+  .bot-callout-point{
+    flex:none;
+    width:96px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    color:var(--accent-dark);
+  }
+  .bot-callout-point span{
+    font-size:11.5px;
+    font-weight:700;
+    text-align:center;
+    line-height:1.3;
+  }
+
+  @media (max-width:600px){
+    .bot-callout{flex-direction:column; text-align:center; padding:22px;}
+    .bot-callout p{margin:0 auto;}
+    .bot-callout-point{flex-direction:row-reverse; width:auto; gap:10px;}
+  }
 
   .chat-panel{
     position:fixed;
@@ -631,6 +700,25 @@
   <hr class="rule">
 
   <section class="tight">
+    <div class="bot-callout">
+      <div class="bot-callout-text">
+        <span class="bot-tag">Included on your site</span>
+        <h3>A chat assistant built right in</h3>
+        <p>A small chat widget sits on every page and instantly answers common questions about your products, pricing and packages — pure front-end, no backend or server, so it costs nothing extra to run. If it doesn't know an answer, it sends the customer straight to your WhatsApp.</p>
+      </div>
+      <div class="bot-callout-point" aria-hidden="true">
+        <svg viewBox="0 0 100 100" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 20 C 46 16, 72 34, 80 66" stroke="#9C0F26" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 8"/>
+          <path d="M68 60 L80 66 L75 78" stroke="#9C0F26" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Try it — bottom right of this page</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="tight">
     <div class="work-box">
       <div>
         <h3>See our recent work</h3>
@@ -647,6 +735,7 @@
     <ul class="included">
       <li><span class="tag">Website</span> <span><b>Product listing website</b> — clean, fast and built to work well on mobile phones.</span></li>
       <li><span class="tag">WhatsApp</span> <span><b>Direct inquiries</b> — every product and order lands straight in your WhatsApp.</span></li>
+      <li><span class="tag">Chat</span> <span><b>Built-in chat assistant</b> — answers common questions instantly, right on the page you're reading now.</span></li>
       <li><span class="tag">Packages</span> <span><b>Kitchen packages</b> — bundle products together for easy full-kitchen orders.</span></li>
       <li><span class="tag">Product updates</span> <span><b>We add and edit products for you</b> — send us new items or changes, and we update the site.</span></li>
       <li><span class="tag">Built for you</span> <span><b>Custom coded website</b> — built from scratch for your shop, not on WordPress or a template builder.</span></li>
@@ -774,6 +863,8 @@
       a:'This quotation is valid until 30 September 2026.' },
     { k:['contact','phone','number','call','reach'],
       a:'You can reach jenw.in on WhatsApp or call +91 95608 35836.' },
+    { k:['chatbot','chat bot','this chat','assistant','bot'],
+      a:'This chat is exactly what will be built into your website — a lightweight, front-end-only assistant that answers common questions instantly, no backend required.' },
     { k:['hi','hello','hey'],
       a:'Hi! I can answer questions about this proposal — pricing, delivery, ordering, or anything else on this page.' }
   ];
